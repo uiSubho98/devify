@@ -1,3 +1,4 @@
+import { Link, NavLink, useLocation } from "react-router-dom";
 import userExLogo1 from "../assets/service/userExperience/Icon1.png";
 import userExLogo2 from "../assets/service/userExperience/Icon2.png";
 import userExLogo3 from "../assets/service/userExperience/Icon3.png";
@@ -401,10 +402,12 @@ close = {handleModalClose}
               collaboration and a unified vision for your digital product.
             </p>
           </div>
-          <button onClick={handleModalOpen}
+          <Link to="/contact">
+          <button 
           className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5">
             Start Project
           </button>
+          </Link>
         </div>
       </section>
     </main>

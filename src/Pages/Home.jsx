@@ -1,6 +1,7 @@
 import heroSection from "../assets/landing/heroSection.png";
 import heroSection2 from "../assets/landing/heroSection2.png";
 import textContainer from "../assets/landing/TextContainer.png";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import textContainer2 from "../assets/landing/textContainer2.png";
 import textContainer3 from "../assets/landing/textContainer3.png";
 import textContainer4 from "../assets/landing/textContainer4.png";
@@ -23,7 +24,7 @@ import logo from "../assets/Logo.png";
 import { FaPlus } from "react-icons/fa6";
 import { useState } from "react";
 import ContactForm from "../commponents/ContactForm";
-import { useNavigate } from "react-router-dom";
+
 const Home = () => {
   const [isAccordingOpen1, setIsAccordingOpen1] = useState(null);
   const [isAccordingOpen2, setIsAccordingOpen2] = useState(null);
@@ -33,24 +34,24 @@ const Home = () => {
       number: "01",
       title: "What services does Devify provide?",
       description:
-        "Devify offers a range of services including design, engineering, and project management. We specialize in user experience design, web development, mobile app development, custom software development, branding and identity, and more.",
+        "Devify provides a range of IT services including website design, development, SEO (Search Engine Optimization), logo design, maintenance, and brand identity services. Clients can contact Devify for assistance in these areas to enhance their digital presence and branding efforts.",
     },
     {
       number: "02",
       title: "How can Devify help my business?",
       description:
-        "User-centered design ensures products meet the needs and preferences of the end-users, enhancing usability and satisfaction.",
+        "Devify can assist your business by providing services such as website design, development, SEO, logo design, maintenance, and brand identity. Their expertise helps in establishing a strong online presence, enhancing brand visibility, and attracting target audiences effectively.",
     },
     {
       number: "03",
       title: "What industries does Devify work with?",
-      description: `Contrast in graphic design emphasizes differences, making elements stand out and improving visual hierarchy.`,
+      description: `Devify works with a variety of industries including startups, NGOs (Non-Governmental Organizations), individual portfolios, and enterprises. Their services are tailored to meet the unique needs of each sector, helping clients from diverse backgrounds establish and enhance their online presence effectively.`,
     },
 
     {
       number: "04",
       title: `How long does it take to complete a project with Devify?.`,
-      description: `Responsive design ensures web pages adapt to various screen sizes, providing an optimal user experience on different devices.`,
+      description: `Devify typically completes projects within a timeframe ranging from 4 weeks to 6 weeks, depending on the scope and complexity of the project. This ensures timely delivery while maintaining high standards of quality and client satisfaction.`,
     },
   ];
   const accordingData2 = [
@@ -59,28 +60,28 @@ const Home = () => {
       title:
         "Do you offer ongoing support and maintenance after the project is completed?",
       description:
-        "Wireframing outlines the basic structure and layout of a design, serving as a visual guide before detailed development.",
+        "Yes, Devify offers ongoing support and maintenance services after the completion of a project. This ensures that your website or digital solution remains up-to-date, secure, and optimized for performance. Ongoing support may include updates, troubleshooting, security enhancements, and technical assistance as needed to ensure your continued satisfaction and success.",
     },
     {
       number: "06",
       title: "Can you work with existing design or development frameworks?",
       description:
-        "User-centered design ensures products meet the needs and preferences of the end-users, enhancing usability and satisfaction.",
+        "Yes, Devify can work with existing design or development frameworks. Whether you have a specific framework in mind or an existing project that needs further development, they are equipped to collaborate and integrate seamlessly with various frameworks to meet your project requirements effectively. This flexibility allows for tailored solutions that align with your business objectives and technical preferences.",
     },
     {
       number: "07",
       title: "How involved will I be in the project development process?",
-      description: `Contrast in graphic design emphasizes differences, making elements stand out and improving visual hierarchy.`,
+      description: `Your involvement in the project development process with Devify can be as hands-on or as hands-off as you prefer. They typically involve clients in key stages such as initial consultations, requirement gathering, design reviews, and milestone approvals. You can expect regular updates and opportunities for feedback throughout the project lifecycle. This collaborative approach ensures that your vision is realized while maintaining transparency and alignment with your expectations.`,
     },
 
     {
       number: "08",
       title: `Can you help with website or app maintenance and updates?`,
-      description: `Responsive design ensures web pages adapt to various screen sizes, providing an optimal user experience on different devices.`,
+      description: `Yes, Devify offers maintenance and update services for websites and apps. This includes regular updates to keep your digital assets secure, optimized, and aligned with current technologies and trends. Whether it's fixing bugs, adding new features, or enhancing performance, they provide ongoing support to ensure your digital presence remains effective and reliable over time.`,
     },
   ];
 
-  const navigate = useNavigate()
+
 
   const handleBorderClick1 = (index) => {
     setIsAccordingOpen1((prevIndex) => (prevIndex === index ? null : index));
@@ -104,7 +105,7 @@ const Home = () => {
     alt="herosection"
     className="object-cover w-full h-[95%] relative hidden md:block"
   />
-  <div className="absolute border-2 border-red-500 inset-0 flex flex-col items-center justify-center gap-8 py-12">
+  <div className="absolute  inset-0 flex flex-col items-center justify-center gap-8 py-12">
     <div className="flex flex-col text-center gap-2 text-white text-3xl font-semibold md:text-5xl">
       <h1 className="md:text-8xl text-4xl">A Digital Product Studio</h1>
       <h1 className="md:text-6xl text-3xl">that will Work</h1>
@@ -117,31 +118,34 @@ const Home = () => {
         </span>{" "}
         ,{" "}
         <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
-          Enterprise leaders
+          Enterprise 
         </span>{" "}
         ,{" "}
         <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
-          Media & Publishers
+          Individuals
         </span>{" "}
         and{" "}
         <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
-          Social Good
+          Business
         </span>
       </p>
     </div>
     <div className="mx-4 bg-[#262626] md:hidden block text-center rounded-md text-white px-6 py-4 text-sm my-6">
       <p  className="text-md">
-        For Startups, Enterprise leaders, Media & Publishers and Social
-        Good
+        For Startups, Enterprise, Individuals  and Business 
       </p>
     </div>
     <div className="flex gap-2 text-white text-sm">
-      <button className="bg-[#262626] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-white px-4 py-2 " onclick={()=>navigate("/work")}>
+      <Link to="/works">
+      <button className="bg-[#262626] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-white px-4 py-2 " >
         Our Works
       </button>
+      </Link>
+      <Link to="/contact">
       <button className="bg-[#9EFF00] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-black px-4 py-2 ">
         Contact Us
       </button>
+      </Link>
     </div>
   </div>
 </div>
@@ -163,7 +167,7 @@ const Home = () => {
             <p className="text-white font-semibold text-2xl md:text-4xl ">
               Our Services
             </p>
-            <p className="text-white text-xs">
+            <p className="text-white sm:text-sm md:text-xl">
               Transform your brand with our innovative digital solutions that
               captivate and engage your audience.
             </p>
@@ -182,7 +186,7 @@ const Home = () => {
           <div className="text-white flex flex-col gap-4 mb-4">
             <h1 className="font-semibold text-xl hidden md:block">Design</h1>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
-            <p className="text-xs">
+            <p className="text-xl sm:text-sm">
               At Devify, our design team is passionate about creating stunning,
               user-centric designs that captivate your audience and elevate your
               brand. We believe that great design is not just about aesthetics;
@@ -206,7 +210,7 @@ const Home = () => {
             <h1 className="font-semibold text-xl hidden md:block">
               Engineering
             </h1>
-            <p className="text-xs">
+            <p className="text-xl sm:text-sm">
               Our engineering team combines technical expertise with a passion
               for innovation to build robust and scalable digital solutions. We
               leverage the latest technologies and best practices to deliver
@@ -223,14 +227,14 @@ const Home = () => {
           <div className="shadow-md w-12 flex flex-row gap-4 items-center">
             <img src={Icon3} alt="Icon3" className="w-full" />
             <h1 className="font-semibold text-xl text-white md:hidden nowrap">
-              Project Management
+              Project Managements
             </h1>
           </div>
           <div className="text-white flex flex-col gap-4 mb-4">
-            <h1 className="font-semibold text-xl hidden md:block">
+            <h1 className="font-semibold text-xl  hidden md:block">
               Project Management
             </h1>
-            <p className="text-xs">
+            <p className="text-xl sm:text-sm">
               Our experienced project management team ensures that your projects
               are delivered on time, within budget, and according to your
               specifications. We follow industry-standard methodologies and
@@ -246,29 +250,14 @@ const Home = () => {
         </div>
       </div>
 
-      <div className=" relative ">
-        <img
-          src={textContainer2}
-          alt="textContainer2"
-          className=" object-contain w-full h-full relative hidden md:block"
-        />
-        <img
-          src={textContainer_2}
-          alt="textContainer_2"
-          className="object-contain w-full h-full relative md:hidden"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center py-12  TextContainer">
-          <div className="flex flex-col text-center gap-2 px-4 md:px-0">
-            <p className="text-white font-semibold text-2xl md:text-4xl ">
-              Why Choose Devify?
-            </p>
-            <p className="text-white text-xs">
-              Experience excellence in digital craftsmanship with our team of
-              skilled professionals dedicated to delivering exceptional results.
-            </p>
-          </div>
+      <section className="hero flex justify-center items-center text-white text-center">
+        <div>
+          <h1 className="text-5xl font-semibold mb-5">Why Choose Devify</h1>
+          <p className="text-lg">
+          Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results.
+          </p>
         </div>
-      </div>
+      </section>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 w-full px-0 md:px-28 items-center">
         <div className="flex flex-col gap-4 px-6 py-8 flex-1">
@@ -341,33 +330,17 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <div className=" relative ">
-        <img
-          src={textContainer3}
-          alt="textContainer3"
-          className=" object-contain w-full h-full relative hidden md:block"
-        />
-        <img
-          src={textContainer_3}
-          alt="textContainer_3"
-          className="object-contain w-full h-full relative md:hidden"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center py-12 TextContainer">
-          <div className="flex flex-col text-center gap-4 md:gap-2 px-4 md:px-0">
-            <p className="text-white font-semibold text-2xl md:text-4xl ">
-              What our Clients say About us
-            </p>
-            {/* eslint-disable-next-line react/no-unescaped-entities */}
-            <p className="text-white text-xs">
-              At Devify, we take pride in delivering exceptional digital
+      <section className="hero flex justify-center items-center text-white text-center">
+        <div>
+          <h1 className="text-5xl font-semibold mb-5"> What our Clients say About us</h1>
+          <p className="text-lg">
+          At Devify, we take pride in delivering exceptional digital
               products and services that drive success for our clients. Here's
               what some of our satisfied clients have to say about their
               experience working with us
-            </p>
-          </div>
+          </p>
         </div>
-      </div>
+      </section>
 
       <div className="flex flex-col md:flex-row px-0 md:px-28  mt-4 md:mt-8">
         <div className="flex flex-col flex-1 px-12 py-4 gap-8">
@@ -414,30 +387,18 @@ const Home = () => {
           </div>
         </div>
       </div>
-
-      <div className=" relative ">
-        <img
-          src={textContainer4}
-          alt="textContainer4"
-          className=" object-contain w-full h-full relative hidden md:block"
-        />
-        <img
-          src={textContainer_4}
-          alt="textContainer_4"
-          className="object-contain w-full h-full relative md:hidden"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center py-12 TextContainer">
-          <div className="flex flex-col text-center gap-4 md:gap-2 px-4 md:px-0">
-            <p className="text-white font-semibold text-2xl md:text-4xl ">
-              Frequently Asked Questions
-            </p>
-            <p className="text-white text-xs">
-              Still you have any questions? Contact our Team via
-              hello@Devify.com
-            </p>
-          </div>
+      
+      <section className="hero flex justify-center items-center text-white text-center">
+        <div>
+          <h1 className="text-5xl font-semibold mb-5"> Frequently Asked Questions</h1>
+          <p className="text-lg">
+          Still you have any questions? Contact our Team via
+              2022devify@gmail.com
+          </p>
         </div>
-      </div>
+      </section>
+
+     
 
       <div className="grid gird-cols-1 md:grid-cols-2 gap-4 my-8 px-0 md:px-28">
         <div className="flex flex-col gap-2">
@@ -490,7 +451,7 @@ const Home = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="text-[#424242] text-[0.9rem] px-8">
+                <p className="text-white text-[0.9rem] px-8">
                   {according.description}
                 </p>
               </div>
@@ -548,7 +509,7 @@ const Home = () => {
                     : "max-h-0 opacity-0"
                 }`}
               >
-                <p className="text-[#424242] text-[0.9rem] px-8">
+                <p className="text-white text-[0.9rem] px-8">
                   {according.description}
                 </p>
               </div>
@@ -556,35 +517,16 @@ const Home = () => {
           ))}
         </div>
       </div>
-
-      <div className="relative">
-        <img
-          src={textContainer5}
-          alt="textContainer5"
-          className="object-contain w-full h-full relative hidden md:block"
-        />
-        <img
-          src={textContainer_5}
-          alt="textContainer_5"
-          className="object-contain w-full h-full relative md:hidden"
-        />
-        <div className="absolute inset-0 flex flex-col items-center justify-center py-12 TextContainer gap-8">
-          <div className="flex justify-center">
-            <img src={logo} alt="logo" className="w-12" />
-          </div>
-          <div className="flex flex-col text-center gap-8 md:gap-4 px-4 md:px-0">
-            <p className="text-white font-semibold text-2xl md:text-4xl">
-              Thank you for your Interest in Devify.
-            </p>
-            <p className="text-white text-xs">
-              We would love to hear from you and discuss how we can help bring
+      <section className="hero flex justify-center items-center text-white text-center">
+        <div>
+          <h1 className="text-5xl font-semibold mb-5"> Thank you for your Interest in Devify.</h1>
+          <p className="text-lg">
+          We would love to hear from you and discuss how we can help bring
               your digital ideas to life. Here are the different ways you can
               get in touch with us.
-            </p>
-          </div>
+          </p>
         </div>
-      </div>
-
+      </section>
       <ContactForm />
     </div>
   );

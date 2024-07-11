@@ -17,7 +17,7 @@ body {
 
 .hero {
   position: relative; /* Ensure the element is positioned */
-  background-image: url("./assets/about/aboutHero.png");
+  background-image: url("./assets/choose.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

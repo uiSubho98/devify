@@ -1,4 +1,5 @@
-import square from "../assets/about/square.png";
+import square from "../assets/about.png";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import logo from "../assets/Logo.png"
 import ContactFormModal from "../commponents/ContactFormModal";
 import { useState } from "react";
@@ -197,10 +198,12 @@ close = {handleModalClose}
               Shape the Future of Digital Innovation.
             </p>
           </div>
-          <button onClick={handleModalOpen}
-           className="rounded-md p-2 text-black bg-[#9EFF00] text-sm font-semibold w-full lg:w-28">
+          <Link to="/contact">
+          <button 
+          className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5 md:mt-0">
             Start Project
           </button>
+          </Link>
         </div>
       </section>
 

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { FaCheck } from 'react-icons/fa';
 import PropTypes from "prop-types";
+import emailjs from "emailjs-com";
+
 const ContactFormModal = ({close}) => {
 
     const [selectedIndex, setSelectedIndex] = useState(null);
@@ -9,22 +11,53 @@ const ContactFormModal = ({close}) => {
     const [message, setMessage] = useState("");
     
 
-    const options = ["Web Design", "SEO", "Content Writing", "Support"]; // Example options
+  const options = ["Web Design & Development", "SEO", "Support & Maintenance",  "Brand Identity"]; // Example options
+    
   
     const handleToggle = (index) => {
       setSelectedIndex(index === selectedIndex ? null : index);
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
-        const selectedOption = options[selectedIndex];
-        console.log({
-            name,
-            email,
-            selectedOption,
-            message
-        });
-    };
+      if(name === "" || message === "" || email=== ""){
+       alert("please fill the form");
+      }
+      else{
+       e.preventDefault();
+       const selectedOption = options[selectedIndex];
+   
+       const templateParams = {
+         from_name: name,
+         email: email,
+         work: selectedOption,
+         message: message,
+       };
+   
+       emailjs
+         .send(
+           "gmail", // replace with your service ID
+           "template_ac1pzy5", // replace with your template ID
+           templateParams,
+           "UeOqEEProtfz9i7t9" // replace with your user ID
+         )
+         .then(
+           (response) => {
+             console.log("SUCCESS!", response.status, response.text);
+             alert("Message sent successfully!");
+             // Clear form fields
+             setName("");
+             setEmail("");
+             setMessage("");
+             setSelectedIndex(null);
+           },
+           (err) => {
+             console.log("FAILED...", err);
+             alert("Failed to send message, please try again later.");
+           }
+         );
+      }
+     };
+   
 
   return (
     <div>
