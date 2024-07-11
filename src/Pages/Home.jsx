@@ -81,8 +81,6 @@ const Home = () => {
     },
   ];
 
-
-
   const handleBorderClick1 = (index) => {
     setIsAccordingOpen1((prevIndex) => (prevIndex === index ? null : index));
     console.log(index);
@@ -95,84 +93,71 @@ const Home = () => {
   return (
     <div className="w-[100%] h-[100%] bg-[#1E1E1E] flex flex-col">
       <div className="h-full md:h-screen relative">
-  <img
-    src={heroSection2}
-    alt="herosection2"
-    className="object-cover w-full h-[90%] relative md:hidden"
-  />
-  <img
-    src={heroSection}
-    alt="herosection"
-    className="object-cover w-full h-[95%] relative hidden md:block"
-  />
-  <div className="absolute  inset-0 flex flex-col items-center justify-center gap-8 py-12">
-    <div className="flex flex-col text-center gap-2 text-white text-3xl font-semibold md:text-5xl">
-      <h1 className="md:text-8xl text-4xl">A Digital Product Studio</h1>
-      <h1 className="md:text-6xl text-3xl">that will Work</h1>
-    </div>
-    <div className="md:bg-white-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-white px-6 py-4 text-sm my-6 hidden md:block">
-      <p className="text-3xl">
-        For{" "}
-        <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
-          Startups
-        </span>{" "}
-        ,{" "}
-        <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
-          Enterprise 
-        </span>{" "}
-        ,{" "}
-        <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
-          Individuals
-        </span>{" "}
-        and{" "}
-        <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
-          Business
-        </span>
-      </p>
-    </div>
-    <div className="mx-4 bg-[#262626] md:hidden block text-center rounded-md text-white px-6 py-4 text-sm my-6">
-      <p  className="text-md">
-        For Startups, Enterprise, Individuals  and Business 
-      </p>
-    </div>
-    <div className="flex gap-2 text-white text-sm">
-      <Link to="/works">
-      <button className="bg-[#262626] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-white px-4 py-2 " >
-        Our Works
-      </button>
-      </Link>
-      <Link to="/contact">
-      <button className="bg-[#9EFF00] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-black px-4 py-2 ">
-        Contact Us
-      </button>
-      </Link>
-    </div>
-  </div>
-</div>
-
-
-      <div className=" relative ">
         <img
-          src={textContainer}
-          alt="textContainer"
-          className=" object-contain w-full h-full relative hidden md:block"
+          src={heroSection2}
+          alt="herosection2"
+          className="object-cover w-full h-[90%] relative md:hidden"
         />
         <img
-          src={textContainer_1}
-          alt="textContainer_1"
-          className="object-contain w-full h-full relative md:hidden"
+          src={heroSection}
+          alt="herosection"
+          className="object-cover w-full h-[95%] relative hidden md:block"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center py-12 TextContainer">
-          <div className="flex flex-col text-center gap-2 px-4 md:px-0">
-            <p className="text-white font-semibold text-2xl md:text-4xl ">
-              Our Services
+        <div className="absolute  inset-0 flex flex-col items-center justify-center gap-8 py-12">
+          <div className="flex flex-col text-center gap-2 text-white text-3xl font-semibold md:text-5xl">
+            <h1 className="md:text-8xl text-4xl">A Digital Product Studio</h1>
+            <h1 className="md:text-6xl text-3xl">that will Work</h1>
+          </div>
+          <div className="md:bg-white-500 rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-white px-6 py-4 text-sm my-6 hidden md:block">
+            <p className="text-3xl">
+              For{" "}
+              <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
+                Startups
+              </span>{" "}
+              ,{" "}
+              <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
+                Enterprise
+              </span>{" "}
+              ,{" "}
+              <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
+                Individuals
+              </span>{" "}
+              and{" "}
+              <span className="px-2 py-1 bg-[#262626] rounded-md mx-1">
+                Business
+              </span>
             </p>
-            <p className="text-white sm:text-sm md:text-xl">
+          </div>
+          <div className="mx-4 bg-[#262626] md:hidden block text-center rounded-md text-white px-6 py-4 text-sm my-6">
+            <p className="text-md">
+              For Startups, Enterprise, Individuals and Business
+            </p>
+          </div>
+          <div className="flex gap-2 text-white text-sm">
+            <Link to="/works">
+              <button className="bg-[#262626] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-white px-4 py-2 ">
+                Our Works
+              </button>
+            </Link>
+            <Link to="/contact">
+              <button className="bg-[#9EFF00] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-black px-4 py-2 ">
+                Contact Us
+              </button>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <section className="hero flex justify-center items-center text-white text-center">
+          <div>
+            <h1 className="text-5xl font-semibold mb-5"> Our Services</h1>
+            <p className="text-lg">
               Transform your brand with our innovative digital solutions that
               captivate and engage your audience.
             </p>
           </div>
-        </div>
+        </section>
       </div>
 
       <div className="flex flex-col md:flex-row w-full h-full justify-center items-center px-0 md:px-28">
@@ -254,7 +239,8 @@ const Home = () => {
         <div>
           <h1 className="text-5xl font-semibold mb-5">Why Choose Devify</h1>
           <p className="text-lg">
-          Experience excellence in digital craftsmanship with our team of skilled professionals dedicated to delivering exceptional results.
+            Experience excellence in digital craftsmanship with our team of
+            skilled professionals dedicated to delivering exceptional results.
           </p>
         </div>
       </section>
@@ -332,12 +318,15 @@ const Home = () => {
       </div>
       <section className="hero flex justify-center items-center text-white text-center">
         <div>
-          <h1 className="text-5xl font-semibold mb-5"> What our Clients say About us</h1>
+          <h1 className="text-5xl font-semibold mb-5">
+            {" "}
+            What our Clients say About us
+          </h1>
           <p className="text-lg">
-          At Devify, we take pride in delivering exceptional digital
-              products and services that drive success for our clients. Here's
-              what some of our satisfied clients have to say about their
-              experience working with us
+            At Devify, we take pride in delivering exceptional digital products
+            and services that drive success for our clients. Here's what some of
+            our satisfied clients have to say about their experience working
+            with us
           </p>
         </div>
       </section>
@@ -346,8 +335,7 @@ const Home = () => {
         <div className="flex flex-col flex-1 px-12 py-4 gap-8">
           <div className="flex flex-col gap-2">
             <h1 className="text-[#D8FF99] font-semibold">
-              Devify has been Instrumental in Transforming our Online
-              Presence.{" "}
+              Devify has been Instrumental in Transforming our Online Presence.{" "}
             </h1>
             {/* eslint-disable-next-line react/no-unescaped-entities */}
             <p className="text-white">
@@ -387,18 +375,19 @@ const Home = () => {
           </div>
         </div>
       </div>
-      
+
       <section className="hero flex justify-center items-center text-white text-center">
         <div>
-          <h1 className="text-5xl font-semibold mb-5"> Frequently Asked Questions</h1>
+          <h1 className="text-5xl font-semibold mb-5">
+            {" "}
+            Frequently Asked Questions
+          </h1>
           <p className="text-lg">
-          Still you have any questions? Contact our Team via
-              2022devify@gmail.com
+            Still you have any questions? Contact our Team via
+            2022devify@gmail.com
           </p>
         </div>
       </section>
-
-     
 
       <div className="grid gird-cols-1 md:grid-cols-2 gap-4 my-8 px-0 md:px-28">
         <div className="flex flex-col gap-2">
@@ -519,11 +508,14 @@ const Home = () => {
       </div>
       <section className="hero flex justify-center items-center text-white text-center">
         <div>
-          <h1 className="text-5xl font-semibold mb-5"> Thank you for your Interest in Devify.</h1>
+          <h1 className="text-5xl font-semibold mb-5">
+            {" "}
+            Thank you for your Interest in Devify.
+          </h1>
           <p className="text-lg">
-          We would love to hear from you and discuss how we can help bring
-              your digital ideas to life. Here are the different ways you can
-              get in touch with us.
+            We would love to hear from you and discuss how we can help bring
+            your digital ideas to life. Here are the different ways you can get
+            in touch with us.
           </p>
         </div>
       </section>
