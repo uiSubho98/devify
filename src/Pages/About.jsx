@@ -1,43 +1,40 @@
 import square from "../assets/about.png";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import logo from "../assets/Logo.png"
+// import { Link, NavLink, useLocation } from "react-router-dom";
+import logo from "../assets/Logo.png";
 import ContactFormModal from "../commponents/ContactFormModal";
 import { useState } from "react";
 
 const About = () => {
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
- const handleModalOpen = ()=>{
-  setOpenModal(true);
- }
- const handleModalClose= ()=>{
-  setOpenModal(false);
- }
+  const handleModalOpen = () => {
+    setOpenModal(true);
+  };
+  const handleModalClose = () => {
+    setOpenModal(false);
+  };
 
   return (
     <main className="main">
-
-{ openModal ? 
-(<ContactFormModal
-close = {handleModalClose}
-/>) : null}
+      {openModal ? <ContactFormModal close={handleModalClose} /> : null}
 
       <section className="hero flex justify-center items-center text-white text-center">
-        <div>
-          <h1 className="text-5xl font-semibold mb-5">About Us</h1>
-          <p className="text-lg">
+        <div className="lg:px-28 md:px-20 px-5">
+          <h1 className="text-2xl lg:text-5xl md:text-3xl font-semibold mb-5">About Us</h1>
+          <p className="text-sm md:text-lg lg:text-lg">
             Welcome to Devify, where collaboration, expertise, and
             client-centricity intersect to shape the future of digital
             innovation.
           </p>
         </div>
       </section>
+
       <section className="about mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 justify-center items-center p-5 lg:p-14 gap-5 my-10 border-b border-b-gray-400 ">
         <div className="text-white">
-          <h1 className="text-4xl font-semibold mb-3">About DeviFy</h1>
-          <p>
-            Devify is a digital product agency that is passionate about
-            crafting exceptional digital experiences. We specialize in design,
+          <h1 className="text-3xl md:text-3xl lg:text-4xl font-semibold mb-3">About DeviFy</h1>
+          <p className="text-sm md:text-base lg:text-base ">
+            Devify is a digital product agency that is passionate about crafting
+            exceptional digital experiences. We specialize in design,
             engineering, and project management, helping businesses thrive in
             the digital landscape. At Devify, we follow a structured and
             collaborative process to ensure the successful delivery of
@@ -87,9 +84,9 @@ close = {handleModalClose}
                 Meanwhile, a team of brilliant engineers was busy crafting the
                 backbone of digital innovation. With their expertise in coding
                 and development, they founded the engineering division of
-                Devify. They believed that technology had the power to
-                transform ideas into reality. Their mission was to build robust,
-                scalable, and cutting-edge digital solutions that would push the
+                Devify. They believed that technology had the power to transform
+                ideas into reality. Their mission was to build robust, scalable,
+                and cutting-edge digital solutions that would push the
                 boundaries of what was possible.
               </p>
             </div>
@@ -141,13 +138,13 @@ close = {handleModalClose}
             <hr />
             <div className="mt-5">
               <p className="text-gray-400">
-                {`Devify's`} success was not solely measured by their
-                technical prowess or design skills but by their unwavering
-                commitment to their clients. They placed their clients at the
-                center of everything they did. They took the time to listen,
-                understand their unique challenges, and tailor their services to
-                meet their specific requirements. Their mission was to become
-                trusted partners, guiding businesses on their digital journey.
+                {`Devify's`} success was not solely measured by their technical
+                prowess or design skills but by their unwavering commitment to
+                their clients. They placed their clients at the center of
+                everything they did. They took the time to listen, understand
+                their unique challenges, and tailor their services to meet their
+                specific requirements. Their mission was to become trusted
+                partners, guiding businesses on their digital journey.
               </p>
             </div>
           </div>
@@ -160,14 +157,14 @@ close = {handleModalClose}
             <hr />
             <div className="mt-5">
               <p className="text-gray-400">
-                With each project, {`Devify's`} reputation grew. Their
-                portfolio expanded to include a diverse range of industries and
-                their impact was felt far and wide. From startups to established
-                enterprises, businesses sought out Devify for their expertise
-                in creating digital products that delivered tangible results.
-                {`Devify's`} success was driven by their passion for
-                innovation, their dedication to quality, and their commitment to
-                helping their clients succeed in the digital world.
+                With each project, {`Devify's`} reputation grew. Their portfolio
+                expanded to include a diverse range of industries and their
+                impact was felt far and wide. From startups to established
+                enterprises, businesses sought out Devify for their expertise in
+                creating digital products that delivered tangible results.
+                {`Devify's`} success was driven by their passion for innovation,
+                their dedication to quality, and their commitment to helping
+                their clients succeed in the digital world.
               </p>
             </div>
           </div>
@@ -178,11 +175,11 @@ close = {handleModalClose}
         <div className="flex flex-col lg:flex-row gap-5">
           <img src={logo} className="h-20 w-20 mx-auto" alt="" />
           <div className="text-gray-400 text-center lg:text-start">
-            <h1 className="text-2xl mb-2">
+            <h1 className="text-xl md:text-2xl lg-text-2xl mb-2">
               Today, Devify Continues to Thrive as a Leading Digital Product
               Agency.....
             </h1>
-            <p>
+            <p className="text-sm md:text-base lg:text-base">
               Combining the power of design, engineering, and project management
               to create transformative digital experiences. They invite you to
               join them on their journey and discover how they can help bring
@@ -198,15 +195,16 @@ close = {handleModalClose}
               Shape the Future of Digital Innovation.
             </p>
           </div>
-          <Link to="/contact">
-          <button 
-          className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5 md:mt-0">
+          {/* <Link to="/contact">
+            <button className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5 md:mt-0">
+              Start Project
+            </button>
+          </Link> */}
+          <button onClick={handleModalOpen} className="rounded-sm p-2 text-black bg-[#9EFF00] text-sm font-semibold w-full lg:w-28 md:w-28 mt-5 md:mt-0">
             Start Project
           </button>
-          </Link>
         </div>
       </section>
-
     </main>
   );
 };

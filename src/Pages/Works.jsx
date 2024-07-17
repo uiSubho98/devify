@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+// import { Link, NavLink, useLocation } from "react-router-dom";
 import btnLogo from "../assets/works/btnLogo.png";
 import logo from "../assets/Logo.png";
 import img1 from "../assets/watch.png";
@@ -8,8 +8,6 @@ import img3 from "../assets/crm.png";
 import img4 from "../assets/ponka.png";
 import img5 from "../assets/dashboard.png";
 import img6 from "../assets/works/img6.png";
-import img7 from "../assets/works/img7.png";
-import img8 from "../assets/works/img8.png";
 import ContactFormModal from "../commponents/ContactFormModal";
 
 const Works = () => {
@@ -21,6 +19,7 @@ const Works = () => {
   const handleModalClose = () => {
     setOpenModal(false);
   };
+
   const works = [
     {
       title: "Business portfolio",
@@ -57,7 +56,7 @@ const Works = () => {
       desc: "At SmartHome, we are dedicated to transforming the way you interact with your home appliances. Our innovative application brings the convenience and control of modern technology right to your fingertips, allowing you to manage all your home devices seamlessly through our user-friendly website.",
     },
     {
-      title: "Mobile App for Fitness Tracking Design",
+      title: "Web App for Fitness Tracking Design",
       name: "FitTrack",
       img: img6,
       desc: "At FitTrack, we are dedicated to revolutionizing the fitness industry with innovative, user-friendly software designed specifically for gyms and fitness centers.",
@@ -67,10 +66,13 @@ const Works = () => {
   return (
     <main className="main">
       {openModal ? <ContactFormModal close={handleModalClose} /> : null}
+
       <section className="hero flex justify-center items-center text-white text-center">
-        <div>
-          <h1 className="text-4xl lg:text-5xl font-semibold mb-5">Our Works</h1>
-          <p className="text-sm lg:text-lg">
+        <div className="lg:px-28 md:px-20 px-5">
+          <h1 className="text-2xl lg:text-5xl md:text-3xl font-semibold mb-5">
+            Our Works
+          </h1>
+          <p className="text-sm md:text-lg lg:text-lg">
             Discover a portfolio of visually stunning and strategically crafted
             digital projects that showcase our creativity and expertise.
           </p>
@@ -78,15 +80,17 @@ const Works = () => {
       </section>
 
       <section className="design p-5 lg:p-14 border-b border-b-gray-800">
-        <h1 className="text-white text-4xl font-semibold">At Devify</h1>
-        <p className="text-white my-5">
+        <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold">
+          At Devify
+        </h1>
+        <p className="text-white text-sm md:text-base lg:text-lg my-5">
           We have had the privilege of working with a diverse range of clients
           and delivering exceptional digital products that drive success.
         </p>
 
-        <div className="text-white bg-gray-800 p-2 w-[70%] lg:w-[24%]">
+        <div className="text-white bg-gray-800 p-2 w-full md:w-[45%] lg:w-[24%]">
           <p className="text-sm flex justify-center">
-            Here are ten examples of our notable works:
+            Here are six examples of our notable works:
           </p>
         </div>
       </section>
@@ -141,12 +145,17 @@ const Works = () => {
               multidisciplinary team works closely together to ensure seamless
               collaboration and a unified vision for your digital product.
             </p>
-            <Link to="/contact">
-          <button 
-          className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5">
-            Start Project
-          </button>
-          </Link>
+            {/* <Link to="/contact">
+              <button className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5">
+                Start Project
+              </button>
+            </Link> */}
+            <button
+              onClick={handleModalOpen}
+              className="rounded-sm p-2 text-black bg-[#9EFF00] text-sm font-semibold w-full lg:w-28 md:w-28 mt-5 md:mt-5"
+            >
+              Start Project
+            </button>
           </div>
         </div>
       </section>

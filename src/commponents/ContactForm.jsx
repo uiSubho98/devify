@@ -56,7 +56,7 @@ const ContactForm = () => {
 
   return (
     <div>
-      <div className="w-full my-4 px-4 flex flex-col justify-center gap-4 md:px-48">
+      <div className="w-full my-4 px-4 flex flex-col justify-center gap-4 md:px-10 lg:px-48">
         <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-8">
           <div className="flex flex-col bg-[#262626] px-4 py-8 gap-4 flex-1 rounded-md justify-center">
             <label htmlFor="name" className="text-white text-md">

@@ -1,4 +1,4 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+// import { Link, NavLink, useLocation } from "react-router-dom";
 import userExLogo1 from "../assets/service/userExperience/Icon1.png";
 import userExLogo2 from "../assets/service/userExperience/Icon2.png";
 import userExLogo3 from "../assets/service/userExperience/Icon3.png";
@@ -35,30 +35,28 @@ import qatLogo1 from "../assets/service/qat/Icon1.png";
 import qatLogo2 from "../assets/service/qat/Icon2.png";
 import qatLogo3 from "../assets/service/qat/Icon3.png";
 import qatLogo4 from "../assets/service/qat/Icon4.png";
-import logo from "../assets/Logo.png"
+import logo from "../assets/Logo.png";
 import ContactFormModal from "../commponents/ContactFormModal";
 import { useState } from "react";
 
 const Service = () => {
-  const [openModal, setOpenModal] = useState(false)
+  const [openModal, setOpenModal] = useState(false);
 
-  const handleModalOpen = ()=>{
-   setOpenModal(true);
-  }
-  const handleModalClose= ()=>{
-   setOpenModal(false);
-  }
+  const handleModalOpen = () => {
+    setOpenModal(true);
+  };
+  const handleModalClose = () => {
+    setOpenModal(false);
+  };
   return (
     <main>
-
- { openModal ? 
-(<ContactFormModal
-close = {handleModalClose}
-/>) : null}
+      {openModal ? <ContactFormModal close={handleModalClose} /> : null}
 
       <section className="hero flex justify-center items-center text-white text-center p-5">
         <div>
-          <h1 className="text-4xl lf:text-5xl font-semibold mb-5">Our Services</h1>
+          <h1 className="text-4xl lf:text-5xl font-semibold mb-5">
+            Our Services
+          </h1>
           <p className="text-sm lg:text-lg">
             Transform your brand with our innovative digital solutions that
             captivate and engage your audience.
@@ -76,7 +74,7 @@ close = {handleModalClose}
           about creating seamless and intuitive user experiences.{" "}
         </p>
 
-        <div className="text-white bg-gray-800 p-2 w-[55%] lg:w-[16%]">
+        <div className="text-white bg-gray-800 p-2 w-full md:w-[30%] lg:w-[24%]">
           <p className="text-sm flex justify-center">
             Our design services include:
           </p>
@@ -182,7 +180,7 @@ close = {handleModalClose}
           applications tailored to your specific needs.
         </p>
 
-        <div className="text-white bg-gray-800 p-2 w-[75%] lg:w-[20%]">
+        <div className="text-white bg-gray-800 p-2 w-full md:w-[35%] lg:w-[24%]">
           <p className="text-sm flex justify-center">
             Our engineering services include:
           </p>
@@ -291,7 +289,7 @@ close = {handleModalClose}
           throughout the development process.
         </p>
 
-        <div className="text-white bg-gray-800 p-2 w-[80%] lg:w-[25%]">
+        <div className="text-white bg-gray-800 p-2 w-full md:w-[45%] lg:w-[24%]">
           <p className="text-sm flex justify-center">
             Our project management services include:
           </p>
@@ -394,7 +392,9 @@ close = {handleModalClose}
         <div className="flex flex-col justify-center text-center">
           <img src={logo} className="h-20 w-20 mx-auto" alt="" />
           <div className="text-white w-full lg:w-[50%] mx-auto mt-10">
-            <h1 className="text-2xl font-semibold mb-2">Let us Bring your Ideas to Life in the Digital World.</h1>
+            <h1 className="text-2xl font-semibold mb-2">
+              Let us Bring your Ideas to Life in the Digital World.
+            </h1>
             <p className="text-sm">
               No matter which services you choose, we are committed to
               delivering exceptional results that exceed your expectations. Our
@@ -402,12 +402,17 @@ close = {handleModalClose}
               collaboration and a unified vision for your digital product.
             </p>
           </div>
-          <Link to="/contact">
-          <button 
-          className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5">
+          {/* <Link to="/contact">
+            <button className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5">
+              Start Project
+            </button>
+          </Link> */}
+          <button
+            onClick={handleModalOpen}
+            className="rounded-sm p-2 text-black bg-[#9EFF00] text-sm font-semibold w-full lg:w-28 mx-auto md:w-28 mt-5 md:mt-5"
+          >
             Start Project
           </button>
-          </Link>
         </div>
       </section>
     </main>

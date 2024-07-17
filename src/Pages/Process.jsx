@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-
 import ContactForm from "../commponents/ContactForm";
 import logo from "../assets/Logo.png";
 import ContactFormModal from "../commponents/ContactFormModal";
@@ -18,34 +16,36 @@ const Process = () => {
     <div className="w-[100%] h-[100%] bg-[#1E1E1E] flex flex-col pb-8">
       {openModal ? <ContactFormModal close={handleModalClose} /> : null}
       <section className="hero flex justify-center items-center text-white text-center">
-        <div className="px-28">
-          <h1 className="text-2xl lg:text-5xl font-semibold mb-5">
+        <div className="lg:px-28 md:px-20 px-5">
+          <h1 className="text-2xl lg:text-5xl md:text-3xl font-semibold mb-5">
             Process of Starting the Project
           </h1>
-          <p className="text-sm lg:text-lg">
+          <p className="text-sm md:text-lg lg:text-lg">
             At Devify, we value transparency, collaboration, and delivering
             exceptional results.
           </p>
         </div>
       </section>
 
-      <section className="design p-5 lg:p-14 border-b border-b-gray-800">
-        <h1 className="text-white text-4xl font-semibold">At Devify</h1>
-        <p className="text-white my-5">
+      <section className="design p-5 md:px-10 lg:p-14 border-b border-b-gray-800">
+        <h1 className="text-white text-2xl md:text-3xl lg:text-4xl font-semibold">
+          At Devify
+        </h1>
+        <p className="text-white text-sm md:text-base lg:text-lg my-5">
           We follow a structured and collaborative process to ensure the
           successful delivery of exceptional digital products. Our process
           combines industry best practices, creative thinking, and a
           client-centric approach.
         </p>
 
-        <div className="text-white bg-gray-800 p-2 w-[70%] lg:w-[24%]">
+        {/* <div className="text-white bg-gray-800 p-2 w-full md:w-[45%] lg:w-[24%]">
           <p className="text-sm flex justify-center">
             Here are ten examples of our notable works:
           </p>
-        </div>
+        </div> */}
       </section>
 
-      <section className="story p-5 lg:p-14">
+      <section className="story p-5 md:px-10 lg:p-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 mt-14">
           <div className="border border-gray-800 p-10">
             <div className="flex items-center gap-2 text-g mb-2">
@@ -192,11 +192,17 @@ const Process = () => {
           digital ideas to life. Here are the different ways you can get in
           touch with us.
         </p>
-        <Link to="/contact">
+        {/* <Link to="/contact">
           <button className="rounded-sm p-2 text-black bg-[#9EFF00] mx-auto text-sm font-semibold w-full lg:w-28 mt-5">
             Start Project
           </button>
-        </Link>
+        </Link> */}
+        <button
+          onClick={handleModalOpen}
+          className="rounded-sm p-2 text-black bg-[#9EFF00] text-sm font-semibold w-full lg:w-28 md:w-28 mt-5 md:mt-5"
+        >
+          Start Project
+        </button>
       </div>
 
       <ContactForm />

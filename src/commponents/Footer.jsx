@@ -1,23 +1,24 @@
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import facebook from "../assets/footer/facebook.png";
-import twitter from "../assets/footer/twitter.png";
+// import twitter from "../assets/footer/twitter.png";
 import linkedin from "../assets/footer/linkedin.png";
 import logo from "../assets/Logo.png";
 import { IoMail } from "react-icons/io5";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
+
 const Footer = () => {
   return (
-    <div className="w-[100%] h-[100%] bg-[#1E1E1E] flex flex-col px-4 md:px-28 gap-6 py-4">
-      <div className="flex flex-col md:flex-row items-center justify-between gap-6 justify-center">
+    <div className="w-[100%] h-[100%] bg-[#1E1E1E] flex flex-col px-4 lg:px-20 gap-6 py-4">
+      <div className="flex flex-col lg:flex-row items-center gap- justify-between">
         <div className="flex flex-row gap-2 items-center">
           <a href="#">
             <img src={logo} alt="Logo" className="w-12" />
           </a>
           <h1 className="text-white font-semibold text-2xl">Devify</h1>
         </div>
-        <div className="flex ">
+        <div className="flex my-5 md:my-5 lg:my-0">
           <ul className="flex flex-row gap-4 text-white flex-wrap items-center justify-center">
             <li>
               <Link to="/">Home</Link>

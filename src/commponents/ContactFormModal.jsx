@@ -1,75 +1,77 @@
 import { useState } from "react";
-import { FaCheck } from 'react-icons/fa';
+import { FaCheck } from "react-icons/fa";
 import PropTypes from "prop-types";
 import emailjs from "emailjs-com";
 
-const ContactFormModal = ({close}) => {
+const ContactFormModal = ({ close }) => {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
 
-    const [selectedIndex, setSelectedIndex] = useState(null);
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [message, setMessage] = useState("");
-    
+  const options = [
+    "Web Design & Development",
+    "SEO",
+    "Support & Maintenance",
+    "Brand Identity",
+  ]; // Example options
 
-  const options = ["Web Design & Development", "SEO", "Support & Maintenance",  "Brand Identity"]; // Example options
-    
-  
-    const handleToggle = (index) => {
-      setSelectedIndex(index === selectedIndex ? null : index);
-    };
+  const handleToggle = (index) => {
+    setSelectedIndex(index === selectedIndex ? null : index);
+  };
 
-    const handleSubmit = (e) => {
-      if(name === "" || message === "" || email=== ""){
-       alert("please fill the form");
-      }
-      else{
-       e.preventDefault();
-       const selectedOption = options[selectedIndex];
-   
-       const templateParams = {
-         from_name: name,
-         email: email,
-         work: selectedOption,
-         message: message,
-       };
-   
-       emailjs
-         .send(
-           "gmail", // replace with your service ID
-           "template_ac1pzy5", // replace with your template ID
-           templateParams,
-           "UeOqEEProtfz9i7t9" // replace with your user ID
-         )
-         .then(
-           (response) => {
-             console.log("SUCCESS!", response.status, response.text);
-             alert("Message sent successfully!");
-             // Clear form fields
-             setName("");
-             setEmail("");
-             setMessage("");
-             setSelectedIndex(null);
-           },
-           (err) => {
-             console.log("FAILED...", err);
-             alert("Failed to send message, please try again later.");
-           }
-         );
-      }
-     };
-   
+  const handleSubmit = (e) => {
+    if (name === "" || message === "" || email === "") {
+      alert("please fill the form");
+    } else {
+      e.preventDefault();
+      const selectedOption = options[selectedIndex];
+
+      const templateParams = {
+        from_name: name,
+        email: email,
+        work: selectedOption,
+        message: message,
+      };
+
+      emailjs
+        .send(
+          "gmail", // replace with your service ID
+          "template_ac1pzy5", // replace with your template ID
+          templateParams,
+          "UeOqEEProtfz9i7t9" // replace with your user ID
+        )
+        .then(
+          (response) => {
+            console.log("SUCCESS!", response.status, response.text);
+            alert("Message sent successfully!");
+            // Clear form fields
+            setName("");
+            setEmail("");
+            setMessage("");
+            setSelectedIndex(null);
+          },
+          (err) => {
+            console.log("FAILED...", err);
+            alert("Failed to send message, please try again later.");
+          }
+        );
+    }
+  };
 
   return (
     <div>
-          <div className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden w-screen h-screen ">
-      <div className="relative w-screen h-screen px-2 md:px-40 my-6 bg-opacity-50 backdrop-filter backdrop-blur-md">
-        {/* Modal content */}
-        {/* <div className="relative flex flex-col bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none"> */}
+      <div className="fixed inset-0 z-50 flex items-center justify-center overflow-hidden w-screen h-screen ">
+        <div className="relative w-screen h-screen px-2 md:px-40 my-6 bg-opacity-50 backdrop-filter backdrop-blur-md">
+          {/* Modal content */}
+          {/* <div className="relative flex flex-col bg-white border-0 rounded-lg shadow-lg outline-none focus:outline-none"> */}
 
-        <div className="w-full my-4 px-4 flex flex-col justify-center gap-4 md:px-48">
-            <div className="flex flex-col md:flex-row justify-center gap-2 md:gap-8">
+          <div className="w-full my-4 px-4 flex flex-col justify-center gap-4 lg:px-48 md:px-0">
+            <div className="flex flex-col md:flex-col lg:flex-row justify-center gap-2 md:gap-8">
               <div className="flex flex-col bg-[#262626] px-4 py-8 gap-4 flex-1 rounded-md justify-center">
-                <label htmlFor="name" className="text-white text-md">Full Name</label>
+                <label htmlFor="name" className="text-white text-md">
+                  Full Name
+                </label>
                 <input
                   type="text"
                   name="name"
@@ -81,7 +83,9 @@ const ContactFormModal = ({close}) => {
                 />
               </div>
               <div className="flex flex-col bg-[#262626] px-4 py-8 gap-4 flex-1 rounded-md justify-center">
-                <label htmlFor="email" className="text-white text-md">Email</label>
+                <label htmlFor="email" className="text-white text-md">
+                  Email
+                </label>
                 <input
                   type="email"
                   name="email"
@@ -93,10 +97,12 @@ const ContactFormModal = ({close}) => {
                 />
               </div>
             </div>
-    
+
             <div>
               <div className="flex flex-col bg-[#262626] px-4 py-2 md:py-8 gap-4 flex-1 rounded-md justify-center">
-                <label htmlFor="work" className="text-white text-md">Why are you contacting us?</label>
+                <label htmlFor="work" className="text-white text-md">
+                  Why are you contacting us?
+                </label>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-2 md:my-6">
                   {options.map((option, index) => (
                     <div key={index} className="flex items-center gap-2">
@@ -110,7 +116,9 @@ const ContactFormModal = ({close}) => {
                       <label
                         htmlFor={`checkbox-${index}`}
                         className={`w-[25px] h-[25px] rounded-md flex items-center justify-center cursor-pointer border-2 ${
-                          selectedIndex === index ? 'border-primary bg-[#262626]' : 'border-gray-400'
+                          selectedIndex === index
+                            ? "border-primary bg-[#262626]"
+                            : "border-gray-400"
                         }`}
                       >
                         {selectedIndex === index ? (
@@ -118,7 +126,9 @@ const ContactFormModal = ({close}) => {
                         ) : (
                           <div
                             className={`${
-                              selectedIndex === index ? 'bg-primary scale-[1]' : 'bg-transparent scale-[0.7]'
+                              selectedIndex === index
+                                ? "bg-primary scale-[1]"
+                                : "bg-transparent scale-[0.7]"
                             } w-[15px] h-[15px] transition-all duration-200 rounded-md`}
                           ></div>
                         )}
@@ -134,10 +144,12 @@ const ContactFormModal = ({close}) => {
                 </div>
               </div>
             </div>
-    
+
             <div>
               <div className="flex flex-col bg-[#262626] px-4 py-4 md:py-8 gap-4 flex-1 rounded-md justify-center">
-                <label htmlFor="message" className="text-white text-md">Your Message</label>
+                <label htmlFor="message" className="text-white text-md">
+                  Your Message
+                </label>
                 <textarea
                   name="message"
                   id="message"
@@ -148,24 +160,31 @@ const ContactFormModal = ({close}) => {
                 ></textarea>
               </div>
             </div>
-    
-            <div className="flex justify-center flex-row gap-4 items-center">
-            <button onClick={close}
-               className="bg-[#262626] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-black px-6 text-white py-2">Close</button>
 
-              <button onClick={handleSubmit}
-               className="bg-[#9EFF00] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-black px-4 py-2">Submit</button>
+            <div className="flex justify-center flex-row gap-4 items-center">
+              <button
+                onClick={close}
+                className="bg-[#262626] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-black px-6 text-white py-2"
+              >
+                Close
+              </button>
+
+              <button
+                onClick={handleSubmit}
+                className="bg-[#9EFF00] rounded-md bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-100 text-black px-4 py-2"
+              >
+                Submit
+              </button>
             </div>
           </div>
-            </div>
-            </div>
         </div>
-    
-  )
-}
+      </div>
+    </div>
+  );
+};
 
 export default ContactFormModal;
 
 ContactFormModal.propTypes = {
-    close: PropTypes.any.isRequired,
-}
+  close: PropTypes.any.isRequired,
+};
